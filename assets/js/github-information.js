@@ -1,4 +1,6 @@
 function userInformationHTML(user) {
+	$("#gh-user-data").html("");
+	$("#gh-repo-data").html("");
 	return `
         <h2>${user.name}
             <span class="small-name">
@@ -15,6 +17,24 @@ function userInformationHTML(user) {
         </div>`;
 }
 
+function repoInformationHTML(repos) {
+	if (repos.lenth == 0) {
+		return `<div class="clearfix repo-list">No Repos!</div>`;
+	}
+
+	var listItemsHtml = repos.map(function(repo) {
+		return `<li>
+					<a href=${repo.html_url}" traget="_blank">${repo.name}</a>
+				</li>`;
+	});
+	return `<div class="clearfix repo-list">
+			<p><strong>Repo List:</strong></p>
+			<ul>
+			${listItemsHtml.join("\n")}
+			</ul>
+			</div>`;
+}
+
 function fetchGitHubInformation(event) {
 	var username = $("#gh-username").val();
 	if (!username) {
@@ -24,18 +44,30 @@ function fetchGitHubInformation(event) {
 
 	$("#gh-user-data").html(
 		`<div id="loader">
-            <img src="assets/css/loader.gif" alt="loading..." />
+            <img src="assets/images/loader.gif" alt="loading..." />
         </div>`
 	);
 
-	$.when($.getJSON(`https://api.github.com/users/${username}`)).then(
-		function(response) {
-			var userData = response;
+	$.when(
+		$.getJSON(`https://api.github.com/users/${username}`),
+		$.getJSON(`https://api.github.com/users/${username}/repos`)
+	).then(
+		function(firstResponse, secondResponce) {
+			var userData = firstResponse[0];
+			var repoData = secondResponce[0];
 			$("#gh-user-data").html(userInformationHTML(userData));
+			$("#gh-repo-data").html(repoInformationHTML(repoData));
 		},
 		function(errorResponse) {
 			if (errorResponse.status === 404) {
 				$("#gh-user-data").html(`<h2>No info found for user ${username}</h2>`);
+			} else if (errorResponse.status === 403) {
+				var reserTime = new Data(
+					errorResponse.getResponseHeder(`X-RateLimit-Reset` * 1000)
+				);
+				$("#gh-user-data").html(
+					`<h4>Too many requests, please wait until ${resetTime.toLocaleTimeString()}`
+				);
 			} else {
 				console.log(errorResponse);
 				$("#gh-user-data").html(
