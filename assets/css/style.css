@@ -5,6 +5,10 @@
 	color: #ffffff;
 }
 
+.aw {
+	font-family: "Audiowide", sans-serif;
+}
+
 .bg-color-name-title {
 	background-color: #000000;
 }
@@ -26,7 +30,7 @@
 }
 
 .bg-color-contact {
-	background-color: #ffffff;
+	background-color: #302e2e;
 }
 
 .bg-color-conferences {
@@ -102,7 +106,7 @@ h4 {
 	margin-top: 25px;
 	margin-bottom: 40px;
 	color: white;
-	background-color: #000000;
+
 }
 
 /*--------------------------------------------Heading*/
@@ -369,7 +373,7 @@ footer .cv-pdf i:hover {
 /*--------------------------------------------Contact*/
 
 .contact-heading {
-	font-family: "Exo", sans-serif;
+	font-family: "Audiowide", sans-serif;
 	font-weight: 300;
 	margin-top: 25px;
 	margin-bottom: 20px;
@@ -386,6 +390,25 @@ button[type="submit"] {
 	margin-bottom: 20px;
 	background-color: #e84610;
 	color: #fafafa;
+}
+
+.form-control {
+	display: block;
+	width: 100%;
+	height: 34px;
+	padding: 6px 12px;
+	font-size: 14px;
+	line-height: 1.42857143;
+	color: rgb(226, 226, 226);
+	background-color: rgb(85, 85, 85);
+	background-image: none;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+	-webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+	-o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+	transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
 }
 
 /*--------------------------------------------Map*/
