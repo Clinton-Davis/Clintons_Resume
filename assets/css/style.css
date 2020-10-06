@@ -1,5 +1,20 @@
 @import url("https://fonts.googleapis.com/css?family=Audiowide|Roboto:100,200,300,400,500,600,700|Exo:100,200,300,400,500,600,700");
 
+
+.vert-aline {
+	vertical-align: middle;
+}
+
+.center-block {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.mr-20 {
+	margin-right: 20px;
+}
+
 /*--------------------------------------------Colors*/
 .text-wht {
 	color: #ffffff;
@@ -72,7 +87,7 @@ body {
 	color: #555555;
 }
 
-/*--------------------------------------------Special Paddings/Margins/Text*/
+/* Special Paddings/Margins/Text*/
 
 h1,
 h2,
@@ -109,7 +124,7 @@ h4 {
 
 }
 
-/*--------------------------------------------Heading*/
+/* Heading */
 
 header {
 	margin: 0;
@@ -188,17 +203,42 @@ header {
 	letter-spacing: 2px;
 }
 
-/*--------------------------------------------Hover.css*/
+.feet-bg {
+	font-weight: 600;
+	background-image: linear-gradient(-45deg, rgb(29, 255, 8), rgb(247, 0, 0), rgb(1, 14, 252));
+	color: transparent;
+	background-size: 10%;
+	background-clip: text;
+	-webkit-background-clip: text;
+	animation: foot-animation 60s ease-in-out infinite alternate;
+	-webkit-animation: foot-animation 60s ease-in-out infinite alternate;
+}
+
+@keyframes foot-animation {
+	0% {
+		background-position: left;
+	}
+
+	50% {
+		background-position: right;
+	}
+
+	100% {
+		background-position: left;
+	}
+}
+
+/* Hover.css */
 
 .hvr-sweep-to-bottom:before {
 	background: rgba(0, 0, 0, 0.2);
 	height: 120px;
 }
 
-/*--------------------------------------------Footer*/
+/* Footer */
 
 footer {
-	background-color: #525252;
+	background-color: rgb(0, 0, 0);
 	color: #fafafa;
 	min-height: 120px;
 	margin: 0;
@@ -219,11 +259,15 @@ footer .cv-pdf i:hover {
 	-o-transition: all 0.35s ease-in-out;
 }
 
+.links {
+	min-height: 120px;
+}
+
 .social-links {
 	padding-bottom: 15px;
 }
 
-.social-links li a i {
+.social-links {
 	width: 32px;
 	height: 32px;
 	padding: 12px 0;
@@ -239,7 +283,7 @@ footer .cv-pdf i:hover {
 	-o-transition: all 0.35s ease-in-out;
 }
 
-.social-links li a i:hover {
+.social-links:hover {
 	background: #e84610;
 }
 
@@ -247,7 +291,7 @@ footer .cv-pdf i:hover {
 	margin: 20px;
 }
 
-/*--------------------------------------------Three Reasons*/
+/* Three Reasons */
 
 .three-reasons-icon {
 	font-size: 26px;
@@ -256,9 +300,10 @@ footer .cv-pdf i:hover {
 
 .three-reasons-heading {
 	margin-bottom: 15px;
+	margin-right: 10px;
 }
 
-/*--------------------------------------------Personal Info*/
+/* Personal Info*/
 
 .personal-info-item {
 	margin-bottom: 20px;
@@ -302,7 +347,7 @@ footer .cv-pdf i:hover {
 	width: 60%;
 }
 
-/*--------------------------------------------Skills*/
+/* Skills*/
 
 .progress {
 	position: relative;
@@ -316,6 +361,23 @@ footer .cv-pdf i:hover {
 	padding: 3px 30px 2px 10px;
 	color: #fafafa;
 	background-color: rgba(25, 25, 25, 0.2);
+}
+
+
+.html-c {
+	background-color: rgb(247, 99, 0);
+}
+
+.js-c {
+	background-color: rgb(247, 211, 31);
+}
+
+.djg-c {
+	background-color: rgb(73, 167, 70);
+}
+
+.sql-c {
+	background-color: rgb(9, 64, 247);
 }
 
 .progress-section {
@@ -411,12 +473,7 @@ button[type="submit"] {
 	transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
 }
 
-/*--------------------------------------------Map*/
-div#map {
-	min-height: 360px;
-}
-
-/*--------------------------------------------Media Queries*/
+/* Media Queries*/
 
 @media (min-width: 992px) {
 	.section-column {
@@ -433,7 +490,7 @@ div#map {
 	}
 }
 
-/*-----------------------------------------------GitHub*/
+/* GitHub */
 @import url("http://fonts.googleapis.com/css?family=Roboto");
 
 br {
