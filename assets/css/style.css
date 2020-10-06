@@ -1,5 +1,12 @@
 @import url("https://fonts.googleapis.com/css?family=Audiowide|Roboto:100,200,300,400,500,600,700|Exo:100,200,300,400,500,600,700");
 
+html {
+	height: 100%;
+}
+
+footer {
+	margin-top: auto;
+}
 
 .vert-aline {
 	vertical-align: middle;
@@ -11,11 +18,23 @@
 	align-items: center;
 }
 
+.mr-1 {
+	margin-right: 0.5rem;
+}
+
 .mr-20 {
 	margin-right: 20px;
 }
 
-/*--------------------------------------------Colors*/
+.mb-2 {
+	margin-bottom: 2rem;
+}
+
+.mb-4 {
+	margin-bottom: 4rem;
+}
+
+/* Colors */
 .text-wht {
 	color: #ffffff;
 }
@@ -76,15 +95,15 @@
 	background-color: #1c4a6c;
 }
 
-.ui-menu-color-interests {
+.ui-menu-color-portfolio {
 	background-color: #e74c3c;
 }
 
 body {
 	font-family: Roboto, sans-serif;
 	font-weight: 300;
-	background-color: #525252;
-	color: #555555;
+	background-color: #000000;
+	color: #cecece;
 }
 
 /* Special Paddings/Margins/Text*/
@@ -381,10 +400,11 @@ footer .cv-pdf i:hover {
 }
 
 .progress-section {
-	margin: 40px 20px;
+	margin: 40px 20px 0px 20px;
+	padding-bottom: 40px;
 }
 
-/*--------------------------------------------Work History*/
+/* Work History*/
 
 .timeline-item {
 	padding: 4em 2em 0em 2em;
@@ -429,10 +449,10 @@ footer .cv-pdf i:hover {
 }
 
 .history-items {
-	margin-bottom: 30px;
+	padding-bottom: 30px;
 }
 
-/*--------------------------------------------Contact*/
+/* Contact*/
 
 .contact-heading {
 	font-family: "Audiowide", sans-serif;
@@ -704,4 +724,14 @@ img {
 	-webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.25);
 	-moz-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.25);
 	box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.25);
+}
+
+/* Portfolio page */
+.portfolio-card {
+	max-width: 18rem;
+}
+
+.bg-project-1 {
+	background-color: #3498db;
+
 }
